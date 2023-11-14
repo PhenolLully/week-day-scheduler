@@ -11,7 +11,7 @@
     var currentHour = dayjs().format("HH");
     $(".savebtn").each(function (){
       $(this).on("click", function(event) {
-      localStorage.setItem($(this).parent().attr("id"), $(this).siblings("textarea").val());
+      localStorage.setItem($(this).parent().attr("id"), event.target.siblings("textarea").val());
       })
     });
   
@@ -45,8 +45,6 @@
   $(document).ready(function() {
     var current = dayjs().format("YYYY-MM-DD");
     $("#currentDay").text("Date: " + current);
-
-console.log("Stored user input:", localStorage.getItem($(".savebtn").parent().attr("id")));
 
   });
   });
