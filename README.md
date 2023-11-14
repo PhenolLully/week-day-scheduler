@@ -8,10 +8,22 @@ You'll need to use the [Day.js](https://day.js.org/en/) library to work with dat
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
+
 - What was your motivation?
+My motivation was to be able to understand and put together a week day schedule
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+I built this project in order to expand on my skills on Jquery and Javascript
 - What problem does it solve?
+It solves the problem of creating a schedule for a week and storing the user info
 - What did you learn?
+I learend more about local storage and dayjs and utilizing them simultaneously.
+
+## Installation
+
+What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+
+First a github repository needs to be created make sure it has a README.md file, then clone the repository and paste it in your Week 4 folder. Then open the developer folder in the class repository and copy the material inside the folder into the repository folder. Then you can continue work on the assignment.
+
 
 ## Usage
 
@@ -22,6 +34,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```md
     ![alt text](assets/images/screenshot.png)
     ```
+
+## Credits
+CHARLES PUENTE-MATOS ONE OF THE TUTORING TEACHERS ASSISTED ME ON PART OF THIS ASSIGNMENT!
+I DID USE YOUTUBE AND OTHER SITES TO HELP ME IMPLEMENT AND COME TO AN UNDERSTANDING OF CODE THAT I AM USING!!!
 
 ## User Story
 
