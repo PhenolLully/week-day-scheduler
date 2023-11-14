@@ -7,24 +7,46 @@
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  $(function () {
-    $(".savebtn").each(function (element){
-      element.on("click", function(event) {
-      localStorage.setItem($(this).parent().id, event.target.siblings("textarea").val());
+  $(function (){
+    $(".savebtn").each(function (){
+      $(this).on("click", function(event) {
+      localStorage.setItem($(this).parent().attr("id"), event.target.siblings("textarea").val());
       })
-    })
+    });
+  })
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
+  $(function (){
+    var currentHour = dayjs().format("HH");
+
+    $(".time-block").each(function(){
+      var block = parseInt($(this).attr("id").split("-")[1])
+
+      if(block < currentHour) {
+        $(this).addClass("past");
+      } else if (block == currentHour){
+        $(this).addClass("present")
+      } else {
+        $(this).addClass("future");
+      }
+
+    })
+
+  });
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  $("textarea").each(function(element){
-    element.val(localStorage.getItem($(this).parent().id))
-  })
+  $("textarea").each(function(){
+    $(this).val(localStorage.getItem($(this).parent().attr("id")))
+  });
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+  $(document).ready(function() {
+    var current = dayjs().format("YYYY-MM-DD");
+    $("#currentDay").text("Date: " + current);
+
+  });
